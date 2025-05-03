@@ -75,7 +75,8 @@ git checkout <hash> -- file.txt
 
 ```
 
-> [!NOTE] El comando `git rev-parse --short HEAD`no se usa. En su lugar, se optó por usar el archivo "db.json" para almacenar los hash de cada archivo, con el propòsito de identificar la version actual.
+> [!NOTE]
+> El comando `git rev-parse --short HEAD`no se usa. En su lugar, se optó por usar el archivo "db.json" para almacenar los hash de cada archivo, con el propòsito de identificar la version actual.
 
 ## License
 
