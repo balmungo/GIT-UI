@@ -1,0 +1,227 @@
+/* Recuerda definir las Custom properties */
+:root {
+	/* Tipografía definida por el usuario */
+	font-size: 100%;
+	/* Tipografía por defecto */
+	font-family: system-ui, sans-serif;
+	/* Anclas suaves */
+	scroll-behavior: smooth;
+}
+/* (Reset clásico) Reseteamos los margin, paddings y bordes de todas las etiquetas */
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-sizing: border-box;
+	vertical-align: baseline;
+}
+/* Reseteamos los before y after */
+*::before,
+*::after {
+	display: block;
+}
+/* Evitamos problemas con las imagenes y vídeos */
+img,
+picture,
+video,
+iframe,
+figure,
+canvas {
+	max-width: 100%;
+	display: block;
+	width: 100%;
+	height: initial;
+	/* Ajustamos el tamaño del objeto imagen dentro de img y video */
+	object-fit: cover;
+	/* Ponemos la posicion del objeto imagen dentro de img y video */
+	object-position: center center;
+}
+/* Reseteamos los enlaces para funcionar como cajas... */
+a {
+	display: block;
+	text-decoration: none;
+	color: inherit;
+	font: inherit;
+}
+p a {
+	display: inline;
+}
+/* Quitamos los puntos de los <li> */
+li,
+menu,
+summary {
+	list-style-type: none;
+}
+ol {
+	counter-reset: revert;
+}
+/* Desactivamos estilos por defecto de las principales etiquetas de texto */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+strong,
+blockquote,
+i,
+b,
+u,
+em,
+pre,
+code,
+mark,
+del {
+	font: inherit;
+	text-decoration: none;
+	color: inherit;
+	overflow-wrap: break-word;
+	text-wrap: pretty;
+}
+mark {
+	background-color: transparent;
+}
+/* Evitamos problemas con los pseudoelementos de quotes */
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+	content: none;
+}
+/* Nivelamos problemas de tipografías y colocación de formularios */
+form,
+input,
+textarea,
+select,
+button,
+label {
+	font: inherit;
+	hyphens: auto;
+	background-color: transparent;
+	color: inherit;
+	display: block;
+	/* Desactivamos los estilos base */
+	appearance: none;
+}
+fieldset {
+	border: none;
+}
+::placeholder {
+	color: unset;
+}
+button,
+label {
+	cursor: pointer;
+}
+/* Reseteamos las tablas */
+table,
+tr,
+td,
+th,
+tbody,
+thead,
+tfoot {
+	border-collapse: collapse;
+	border-spacing: 0;
+	font: inherit;
+}
+/* Evitamos problemas con los SVG */
+svg {
+	width: 100%;
+	display: block;
+	fill: currentColor;
+}
+/* Configuramos la tipografía para toda la web */
+body {
+	min-height: 100vh;
+	line-height: 1.5em;
+	color: inherit;
+	/* Evitamos que el texto se desborde */
+	hyphens: auto;
+	/* La tipografía es más limpia en macOS */
+	font-smooth: always;
+	/* La tipografía es más limpia en macOS */
+	-webkit-font-smoothing: antialiased;
+	/* La tipografía es más limpia en macOS */
+	-moz-osx-font-smoothing: grayscale;
+}
+/* Solventamos errores para los navegadores */
+textarea {
+	white-space: pre-wrap;
+}
+/* Solventamos errores en Safari */
+:where([contenteditable]:not([contenteditable="false"])) {
+	-moz-user-modify: read-write;
+	-webkit-user-modify: read-write;
+	overflow-wrap: break-word;
+	-webkit-line-break: after-white-space;
+	-webkit-user-select: auto;
+}
+:where([draggable="true"]) {
+	-webkit-user-drag: element;
+}
+:root {
+	--color-1: #272e45;
+	--color-2: #494769;
+	--color-3: #816c9b;
+	--color-4: #d097da;
+	--color-5: #ffd6f4;
+	--color-6: #872008;
+	--color-7: #43652a;
+	--color-8: var(--color-1);
+	--rgba-3: 80, 81, 103;
+}
+[data-theme="light"] {
+	--color-1: #e8e4f6;
+	--color-2: #ffebf4;
+	--color-3: #103a53;
+	--color-4: #0e6d3b;
+	--color-5: #489e3c;
+}
+[data-theme="dark"] {
+	/* Tema oscuro */
+	--color-1: #060606;
+	--color-2: #24232b;
+	--color-3: #505167;
+	--color-4: #8788a8;
+	--color-5: #c5c8e8;
+}
+[data-theme="rose"] {
+	/* Alto contraste */
+	--color-1: #2c3547;
+	--color-2: #4b4e62;
+	--color-3: #766a88;
+	--color-4: #b494b5;
+	--color-5: #e8c7e9;
+}
+[data-theme="coffie"] {
+	--color-1: #5a2f26;
+	--color-2: #7b4736;
+	--color-3: #ab6c4f;
+	--color-4: #eea272;
+	--color-5: #ffeca7;
+}
+[data-theme="formal"] {
+	--color-1: #0f3343;
+	--color-2: #2e5965;
+	--color-3: #7b919a;
+	--color-4: #cad1d2;
+	--color-5: #f3f3f3;
+}
+/* Desactivamos los animations en el caso de que el usuario haya configurado el modo sin animation */
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation: none !important;
+		transition: none !important;
+	}
+}
+/* Configuramos el texto que seleccionamos */
+::selection {
+	background-color: var(--tu-propia-variable);
+	color: var(--tu-propia-variable);
+}

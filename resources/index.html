@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+	<title>GIT UI</title>
+	<link rel="stylesheet" href="./css/reset.css" />
+	<link rel="stylesheet" href="./css/index.css" />
+	<link rel="stylesheet" href="./css/input.css" />
+	<script type="module" src="./components/AppDoc.js"></script>
+	<script type="module" src="./components/AppStatus.js"></script>
+	<script type="module" src="./components/AppVersion.js"></script>
+</head>
+
+<body>
+	<div id="drawer" class="hide"></div>
+	<div id="main" class="main">
+		<div id="header" class="header">
+			<div class="header-title">
+				<span id="header-location" class="location"></span>
+			</div>
+			<nav id="menu" class="menu">
+				<button id="btnConfig" class="menu-item">config</button>
+				<select id="theme-selector" class="menu-item">
+					<option value="">themas</option>
+					<option value="light">Verde Alto</option>
+					<option value="dark">Oscuro</option>
+					<option value="rose">Rosa</option>
+					<option value="coffie">Caffe</option>
+					<option value="formal">Formal</option>
+				</select>
+			</nav>
+		</div>
+		<div id="body" class="body">
+			<nav id="nav" class="nav">
+				<button id="btnInit" class="btn">Iniciar</button>
+				<button id="btnFile" class="btn">Ver Archivos</button>
+				<button id="btnStatus" class="btn">Ver Estado</button>
+			</nav>
+			<div id="desk" class="desk">
+				<div class="directory">
+					<button id="btnBack" class="back">
+						<img slot="slot-img" class="svgBack" src="../icons/back.svg" alt="subir_directorio" />
+					</button>
+					<input id="textPath" type="text" class="path" disabled placeholder="." />
+				</div>
+				<div id="container" class="container">
+				</div>
+			</div>
+		</div>
+		<div id="footer" class="footer">
+			<textarea id="txtLog" class="textarea"></textarea>
+		</div>
+	</div>
+	<template id="form-message">
+		<div class="form">
+			<fieldset class="fieldset">
+				<legend class="legend">INFORMACION</legend>
+				<span id="info" class="info"></span>
+				<button id="btnCancel" class="btn cancel" onclick="cancelForm()">
+					Cancelar
+				</button>
+			</fieldset>
+		</div>
+	</template>
+	<template id="form-version">
+		<div class="form">
+			<fieldset class="fieldset">
+				<legend id="title" class="legend">${fileName}</legend>
+				<input id="hidden" type="hidden" />
+				<span class="span">¿Quieres Usar Esta Version?</span>
+				<span id="info" class="info">${text}</span>
+				<div class="options">
+					<button class="btn acept" onclick="aceptCheckoutCommit()">
+						Aceptar
+					</button>
+					<button class="btn cancel" onclick="cancelForm()">
+						Cancelar
+					</button>
+				</div>
+			</fieldset>
+		</div>
+	</template>
+	<template id="form-commit">
+		<div class="form">
+			<fieldset class="fieldset">
+				<legend id="title" class="legend">${fileName}</legend>
+				<input type="hidden" id="hidden" value="${fileName}" />
+				<span class="info">¿Que Cambios Realizaste?</span>
+				<input type="text" id="inpText" class="inpText" placeholder="Escribe aqui" />
+				<div class="options">
+					<button class="btn acept" onclick="aceptFormCommit()">
+						Aceptar
+					</button>
+					<button class="btn cancel" onclick="cancelForm()">
+						Cancelar
+					</button>
+				</div>
+			</fieldset>
+		</div>
+	</template>
+	<template id="form-config">
+		<div class="form">
+			<fieldset class="fieldset">
+				<legend class="legend">Configuraciones</legend>
+				<div class="inputCheckbox">
+					<input type="checkbox" id="chkLog" name="chkLog" class="checkbox" />
+					<label for="chkLog" class="span">
+						Show Panel Logs
+					</label>
+				</div>
+				<button class="btn acept" onclick="aceptFormConfig()">Guardar</button>
+				<button class="btn cancel" onclick="cancelForm()">Cancelar</button>
+			</fieldset>
+		</div>
+	</template>
+	<script src="/js/neutralino.js"></script>
+
+	<script src="./js/connectDb.js"></script>
+	<script src="./js/index.js"></script>
+	<script src="./js/interface.js"></script>
+</body>
+
+</html>

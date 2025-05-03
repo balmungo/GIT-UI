@@ -1,0 +1,68 @@
+:root {
+	--header: 10%;
+	--body: 80%;
+	--footer: 10%;
+}
+.main {
+	height: 100vh;
+	width: 100vw;
+}
+.header {
+	background-color: var(--color-1);
+	height: var(--header);
+	display: flex;
+	flex-direction: column;
+}
+.header-title {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+.menu {
+	height: 50%;
+	display: flex;
+	align-items: center;
+}
+.body {
+	background-color: var(--color-2);
+	height: var(--body);
+	display: flex;
+}
+.footer {
+	background-color: var(--color-2);
+	height: var(--footer);
+}
+.nav {
+	height: 100%;
+	width: 15rem;
+}
+.desk {
+	height: 100%;
+	width: 100%;
+	border: solid var(--color-5) 1px;
+	border-radius: 15px;
+}
+.directory {
+	display: flex;
+	height: 5%;
+}
+.container {
+	height: 95%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	padding: 1rem;
+	overflow-y: scroll;
+}
+.drawer {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(var(--rgba-3), 0.8);
+	z-index: 10;
+}
+.hide {
+	display: none;
+}
