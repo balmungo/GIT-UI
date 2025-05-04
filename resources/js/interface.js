@@ -180,7 +180,7 @@ function aceptCheckoutCommit() {
 function aceptFormConfig() {
 	const chkLog = document.getElementById("chkLog");
 	myConfig.logPanel = chkLog.checked;
-	writeDB(myConfig, CONFIG_PATH);
+	writeDB(myConfig, "appConfig.json");
 	cancelForm();
 }
 /*se llama al hacer click en el boton iniciar*/
@@ -222,10 +222,7 @@ function setTheme(theme) {
 	const html = document.documentElement;
 	html.setAttribute("data-theme", theme);
 	myConfig.theme = theme;
-}
-/*guarda el tema seleccionado en la configuracion de la aplicacion*/
-function saveConfigAppClose() {
-	writeDB(myConfig, CONFIG_PATH);
+	writeDB(myConfig, "appConfig.json");
 }
 /*sale del directorio actual y lo establece como directorio actual*/
 async function backDirectory() {

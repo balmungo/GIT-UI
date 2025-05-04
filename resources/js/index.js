@@ -1,12 +1,11 @@
 Neutralino.init();
 /*se llama al cerra la aplicacion */
 function onWindowClose() {
-	saveConfigAppClose();
 	Neutralino.app.exit();
 }
 /*eventos de la aplicacion */
 Neutralino.events.on("windowClose", onWindowClose);
-Neutralino.events.on("ready", getAllItem());
+Neutralino.events.on("ready", getAllItem);
 /*ejecuta comando shell recibiendo como parametro el comando y la ubicacion, retorna el resultado del comando*/
 async function runCommand(command, Dir = NL_CWD) {
 	let { stdErr, stdOut } = await Neutralino.os.execCommand(
